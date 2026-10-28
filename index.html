@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuzzVia | Premium Digital Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root{--bg-base:#050505;--bg-surface:#111111;--brand-green:#23d88c;--brand-green-glow:rgba(35,216,140,0.15);--text-main:#ffffff;--text-muted:#8a8a8a;--border-color:#222222;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;-webkit-tap-highlight-color:transparent;}
+body{background-color:var(--bg-base);color:var(--text-main);min-height:100vh;overflow-x:hidden;scroll-behavior:smooth;}
+.bg-grid{position:fixed;top:0;left:0;width:100vw;height:100vh;background-image:linear-gradient(to right,rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(circle at center,black 40%,transparent 80%);-webkit-mask-image:radial-gradient(circle at center,black 40%,transparent 80%);z-index:-1;pointer-events:none;animation:gridMove 20s linear infinite;}
+@keyframes gridMove{0%{transform:translateY(0);}100%{transform:translateY(50px);}}
+.logo-container{display:flex;align-items:center;font-weight:800;font-size:1.8rem;letter-spacing:-0.04em;user-select:none;text-decoration:none;z-index:1001;}
+.logo-text{color:var(--text-main);}
+.logo-arrows{color:var(--brand-green);margin-left:4px;font-weight:900;letter-spacing:-4px;font-size:1.9rem;transform:scaleY(1.1);text-shadow:0 0 15px var(--brand-green-glow);}
+.top-nav{position:fixed;top:0;left:0;width:100%;padding:1.2rem 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(5,5,5,0.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);z-index:1000;}
+.nav-action{background-color:var(--brand-green);color:#000;border:none;padding:12px 24px;border-radius:50px;font-weight:800;font-size:0.9rem;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all 0.3s ease;text-decoration:none;box-shadow:0 0 20px rgba(35,216,140,0.2);}
+.nav-action:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 5px 25px rgba(35,216,140,0.4);}
+.nav-action svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.hero{padding:12rem 5% 6rem;text-align:center;display:flex;flex-direction:column;align-items:center;position:relative;}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);z-index:-1;pointer-events:none;}
+.orb-1{top:10%;left:20%;width:300px;height:300px;background:rgba(35,216,140,0.15);animation:float 8s ease-in-out infinite;}
+.orb-2{top:20%;right:15%;width:250px;height:250px;background:rgba(35,100,216,0.1);animation:float 10s ease-in-out infinite reverse;}
+@keyframes float{0%,100%{transform:translate(0,0);}50%{transform:translate(30px,-30px);}}
+.hero h1{position:relative;z-index:1;font-size:4rem;font-weight:800;letter-spacing:-0.04em;line-height:1.1;margin-bottom:1.5rem;}
+.hero h1 span{background:linear-gradient(135deg,var(--brand-green),#1ba86c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero p{position:relative;z-index:1;color:var(--text-muted);font-size:1.2rem;max-width:600px;margin-bottom:2rem;line-height:1.6;}
+.container{padding:2rem 5% 8rem;max-width:1400px;margin:0 auto;perspective:1000px;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2rem;}
+.service-card{background:linear-gradient(180deg,var(--bg-surface) 0%,#0a0a0a 100%);border:1px solid var(--border-color);border-radius:28px;padding:2.5rem 2rem;position:relative;overflow:hidden;transform-style:preserve-3d;transition:transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275),box-shadow 0.4s ease,border-color 0.4s ease;}
+.service-card:hover{border-color:rgba(35,216,140,0.3);box-shadow:0 20px 40px rgba(0,0,0,0.6),0 0 0 1px rgba(35,216,140,0.1) inset;}
+.service-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),rgba(35,216,140,0.1),transparent 40%);opacity:0;transition:opacity 0.4s;pointer-events:none;z-index:1;}
+.service-card:hover::before{opacity:1;}
+.card-content{position:relative;z-index:2;transform:translateZ(20px);}
+.card-header{display:flex;align-items:center;gap:16px;margin-bottom:2rem;}
+.icon-box{width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,#1a1a1a,#0a0a0a);border:1px solid #333;display:flex;align-items:center;justify-content:center;color:var(--brand-green);flex-shrink:0;transition:all 0.4s ease;box-shadow:0 10px 20px rgba(0,0,0,0.3);}
+.icon-box svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.service-card:hover .icon-box{border-color:var(--brand-green);box-shadow:0 0 20px var(--brand-green-glow);color:#fff;background:var(--brand-green);}
+.card-header h3{font-size:1.3rem;font-weight:700;line-height:1.3;}
+.card-list{list-style:none;display:flex;flex-direction:column;gap:0.9rem;}
+.card-list li{display:flex;align-items:flex-start;gap:12px;font-size:0.95rem;color:#a0a0a0;line-height:1.5;transition:color 0.3s;}
+.service-card:hover .card-list li{color:#d1d1d1;}
+.card-list li svg{color:#333;width:18px;height:18px;flex-shrink:0;margin-top:3px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:color 0.3s,transform 0.3s;}
+.service-card:hover .card-list li svg{color:var(--brand-green);transform:scale(1.1);}
+.footer{position:relative;background:linear-gradient(to top,#000,var(--bg-base));border-top:1px solid var(--border-color);padding:6rem 5% 4rem;text-align:center;overflow:hidden;}
+.footer::before{content:'';position:absolute;bottom:-50%;left:50%;transform:translateX(-50%);width:100vw;height:100vw;background:radial-gradient(circle,var(--brand-green-glow) 0%,transparent 60%);pointer-events:none;}
+.footer h2{font-size:3rem;margin-bottom:1rem;position:relative;z-index:1;}
+.footer p{color:var(--text-muted);margin-bottom:2.5rem;font-size:1.1rem;position:relative;z-index:1;}
+.btn-large{background-color:var(--brand-green);color:#000;border:none;padding:18px 40px;border-radius:50px;font-weight:800;font-size:1.1rem;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s ease;text-decoration:none;position:relative;z-index:1;box-shadow:0 10px 30px rgba(35,216,140,0.2);}
+.btn-large:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 15px 40px rgba(35,216,140,0.4);}
+.btn-large svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.copyright{margin-top:5rem;font-size:0.9rem;color:#444;font-weight:600;position:relative;z-index:1;}
+.js-reveal{transition:opacity 0.8s cubic-bezier(0.165,0.84,0.44,1),transform 0.8s cubic-bezier(0.165,0.84,0.44,1);}
+html.anim .js-reveal{opacity:0;transform:translateY(40px);}
+html.anim .js-reveal.is-visible{opacity:1;transform:translateY(0);}
+@media(max-width:768px){.hero h1{font-size:2.8rem;}.hero p{font-size:1rem;}.services-grid{grid-template-columns:1fr;gap:1.5rem;}.top-nav{padding:1rem 5%;}.logo-container{font-size:1.5rem;}.logo-arrows{font-size:1.6rem;}.footer h2{font-size:2.2rem;}.service-card:hover{transform:none;}.card-content{transform:none;}}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<nav class="top-nav">
+<a href="#" class="logo-container"><span class="logo-text">BuzzVia</span><span class="logo-arrows">>></span></a>
+<a href="https://wa.me/923310004971" target="_blank" class="nav-action"><i data-lucide="message-circle"></i><span>Contact</span></a>
+</nav>
+<header class="hero">
+<div class="orb orb-1"></div><div class="orb orb-2"></div>
+<h1 class="js-reveal">Premium <span>Digital Solutions</span></h1>
+<p class="js-reveal">One brand. One identity. Everything you need to elevate your digital presence, all in one place.</p>
+</header>
+<main class="container">
+<div class="services-grid">
+<div class="service-card js-reveal"><div class="card-content"><div class="card-header"><div class="icon-box"><i data-lucide="tv"></i></div><h3>Streaming & Entertainment</h3></div><ul class="card-list"><li><i data-lucide="check-circle-2"></i> Amazon Prime, Netflix, Hulu</li><li><i data-lucide="check-circle-2"></i> Spotify, YouTube Premium</li><li><i data-lucide="check-circle-2"></i> Crunchyroll, Apple TV, HBO Max</li><li><i data-lucide="check-circle-2"></i> Local (Chaupal, Tapmad, Ullu)</li><li><i data-lucide="check-circle-2"></i> Sony LIV</li></ul></div></div>
+<div class="service-card js-reveal"><div class="card-content"><div class="card-header"><div class="icon-box"><i data-lucide="radio-tower"></i></div><h3>IPTV Services</h3></div><ul class="card-list"><li><i data-lucide="check-circle-2"></i> Opplex IPTV</li><li><i data-lucide="check-circle-2"></i> Starshare IPTV</li><li><i data-lucide="check-circle-2"></i> B1G IPTV</li><li><i data-lucide="check-circle-2"></i> 5G Live IPTV</li></ul></div></div>
+<div class="service-card js-reveal"><div class="card-content"><div class="card-header"><div class="icon-box"><i data-lucide="brain-circuit"></i></div><h3>AI Tools & Productivity</h3></div><ul class="card-list"><li><i data-lucide="check-circle-2"></i> ChatGPT Plus, Claude Pro, Gemini Ultra</li><li><i data-lucide="check-circle-2"></i> Canva Pro, CapCut Pro, Picsart</li><li><i data-lucide="check-circle-2"></i> ElevenLabs, HeyGen, Leonardo AI</li><li><i data-lucide="check-circle-2"></i> Grammarly, QuillBot, vidIQ</li><li><i data-lucide="check-circle-2"></i> Windows 11 Pro, Microsoft 365</li><li><i data-lucide="check-circle-2"></i> Envato Elements, KineMaster, Ideogram</li></ul></div></div>
+<div class="service-card js-reveal"><div class="card-content"><div class="card-header"><div class="icon-box"><i data-lucide="shield-check"></i></div><h3>Secure VPNs</h3></div><ul class="card-list"><li><i data-lucide="check-circle-2"></i> Proton VPN</li><li><i data-lucide="check-circle-2"></i> Surfshark VPN</li><li><i data-lucide="check-circle-2"></i> ExpressVPN</li><li><i data-lucide="check-circle-2"></i> NordVPN</li></ul></div></div>
+<div class="service-card js-reveal"><div class="card-content"><div class="card-header"><div class="icon-box"><i data-lucide="user-check"></i></div><h3>Accounts & Subscriptions</h3></div><ul class="card-list"><li><i data-lucide="check-circle-2"></i> TikTok UK Accounts</li><li><i data-lucide="check-circle-2"></i> Adobe Creative Cloud</li><li><i data-lucide="check-circle-2"></i> LinkedIn Career Premium</li><li><i data-lucide="check-circle-2"></i> LinkedIn Business Premium</li></ul></div></div>
+<div class="service-card js-reveal"><div class="card-content"><div class="card-header"><div class="icon-box"><i data-lucide="megaphone"></i></div><h3>SMM (Social Media Marketing)</h3></div><ul class="card-list"><li><i data-lucide="check-circle-2"></i> TikTok, Instagram, YouTube, Facebook</li><li><i data-lucide="check-circle-2"></i> Telegram, WhatsApp, X (Twitter)</li><li><i data-lucide="check-circle-2"></i> Threads, LinkedIn, Likee</li><li><i data-lucide="check-circle-2"></i> SnackVideo, SoundCloud, Audiomack</li></ul></div></div>
+<div class="service-card js-reveal"><div class="card-content"><div class="card-header"><div class="icon-box"><i data-lucide="trending-up"></i></div><h3>Monetization & RDP</h3></div><ul class="card-list"><li><i data-lucide="check-circle-2"></i> TikTok Agency & Monetizable Accounts</li><li><i data-lucide="check-circle-2"></i> YouTube AdSense Setup</li><li><i data-lucide="check-circle-2"></i> AdSense Verification PIN</li><li><i data-lucide="check-circle-2"></i> RDP Services & Website Traffic</li></ul></div></div>
+<div class="service-card js-reveal"><div class="card-content"><div class="card-header"><div class="icon-box"><i data-lucide="code-2"></i></div><h3>Development & Education</h3></div><ul class="card-list"><li><i data-lucide="check-circle-2"></i> Website & App Development</li><li><i data-lucide="check-circle-2"></i> Software Development</li><li><i data-lucide="check-circle-2"></i> Social Media Marketing Course</li><li><i data-lucide="check-circle-2"></i> Account Reporting Services</li></ul></div></div>
+</div>
+</main>
+<footer class="footer">
+<h2 class="js-reveal">Ready to Order?</h2>
+<p class="js-reveal">Inbox us for prices and custom orders. Fast, reliable, and premium digital solutions.</p>
+<a href="https://wa.me/923310004971" target="_blank" class="btn-large js-reveal"><i data-lucide="message-circle"></i><span>Contact Us Now</span></a>
+<p class="copyright">BUZZVIA — DIGITAL SERVICES © 2024</p>
+</footer>
+<script>
+(function(){
+  try{ if(window.lucide && lucide.createIcons) lucide.createIcons(); }catch(e){}
+  var cards = document.querySelectorAll('.service-card');
+  if(window.matchMedia && window.matchMedia('(pointer:fine)').matches){
+    cards.forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left; var y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', x + 'px');
+        card.style.setProperty('--mouse-y', y + 'px');
+        var cx = rect.width/2, cy = rect.height/2;
+        var rx = ((y-cy)/cy)*-5, ry = ((x-cx)/cx)*5;
+        card.style.transform = 'perspective(1000px) rotateX('+rx+'deg) rotateY('+ry+'deg) scale3d(1.02,1.02,1.02)';
+      });
+      card.addEventListener('mouseleave', function(){
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+      });
+    });
+  }
+  if('IntersectionObserver' in window){
+    document.documentElement.classList.add('anim');
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('is-visible'); obs.unobserve(en.target);} });
+    }, {root:null, rootMargin:'0px 0px -50px 0px', threshold:0.1});
+    document.querySelectorAll('.js-reveal').forEach(function(el){ obs.observe(el); });
+    setTimeout(function(){ document.querySelectorAll('.hero .js-reveal').forEach(function(el){ el.classList.add('is-visible'); }); }, 100);
+  }
+})();
+</script>
+</body>
+</html>
